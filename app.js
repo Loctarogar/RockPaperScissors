@@ -39,18 +39,25 @@ const getComputerChoice = function () {
   }
 };
 
-const getWinner = function(cChoice, pChoice) {
-  if(cChoice === pChoice) {
-    return RESULT_DRAW;
-  } else if (
+const getWinner = (cChoice, pChoice) => {
+  return cChoice === pChoice ? RESULT_DRAW :
     cChoice === ROCK && pChoice === PAPER ||
     cChoice === PAPER && pChoice === SCISSORS||
-    cChoice === SCISSORS && pChoice === ROCK
-  ) {
-    return RESULT_PLAYER_WINS;
-  }
-  return RESULT_COMPUTER_WINS;
-};
+    cChoice === SCISSORS && pChoice === ROCK ? RESULT_PLAYER_WINS :
+    RESULT_COMPUTER_WINS;
+}
+// const getWinner = function(cChoice, pChoice) {
+//   if(cChoice === pChoice) {
+//     return RESULT_DRAW;
+//   } else if (
+//     cChoice === ROCK && pChoice === PAPER ||
+//     cChoice === PAPER && pChoice === SCISSORS||
+//     cChoice === SCISSORS && pChoice === ROCK
+//   ) {
+//     return RESULT_PLAYER_WINS;
+//   }
+//   return RESULT_COMPUTER_WINS;
+// };
 
 startGameBtn.addEventListener('click', function() {
   if (gameIsRunning) {
