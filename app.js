@@ -10,7 +10,7 @@ const RESULT_COMPUTER_WINS = 'COMPUTER_WINS';
 
 let gameIsRunning = false;
 
-const getPlayerChoice = function() {
+const getPlayerChoice = () => {
   console.log('in f');
   const selection = prompt('sldfjl').toUpperCase();
   if (
@@ -25,7 +25,7 @@ const getPlayerChoice = function() {
   return selection;
 };
 
-const getComputerChoice = function () {
+const getComputerChoice = () => {
   const randomValue = Math.random();
   if(randomValue < 0.34) {
     console.log(ROCK);
@@ -59,7 +59,7 @@ const getWinner = (cChoice, pChoice) => {
 //   return RESULT_COMPUTER_WINS;
 // };
 
-startGameBtn.addEventListener('click', function() {
+startGameBtn.addEventListener('click', () => {
   if (gameIsRunning) {
     return ;
   }
